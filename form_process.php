@@ -25,7 +25,45 @@ if(!in_array($Username, $name)){
     echo "welcome";
 }
 
+$query = "INSERT INTO users(username,password)";
+   $query .= "VALUES ('$Username', '$Password')";
+
+
+   $result = mysqli_query($connection, $query);  
+
+   if(!$result){
+    die('Query Failed' . mysqli_error($myqli));
+   }
+
 // echo "hello" . $Username;
 // echo "Your password is" . $Password;
 
+
+
+    // $Username = $_POST['Username'];
+    // $Password = $_POST['Password'];
+
+    //  if($Username && $Password){
+    //   echo $Username;
+    //    echo $Password;
+
+    // } else {
+    //      echo "this field cannot be blank";
+    //  }``
+
+
 }
+
+/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
