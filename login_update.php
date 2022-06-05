@@ -1,12 +1,9 @@
+<?php include "db.php";?>
+<?php include "function.php";?>
 <?php
-   
-   include "db.php";
-  
-   $query = "SELECT * FROM  users";
-   $result = mysqli_query($connection, $query);  
-   if(!$result){
-    die('Query Failed' . mysqli_error($myqli));
-   }
+if(isset($_POST['submit'])){
+    UpdateTable();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,13 +28,9 @@
                     <input type="Password" name="Password" class="form-control">
                 </div>
                 <div class="form-control">
-                    <select name="" id="">
+                    <select name="id" id="id">
                         <?php
-                           
-                            while($row = mysqli_fetch_assoc($result) ){
-                                $id = $row['id'];
-                            echo "<option value='$id'>$id</option>";
-                           }
+                           showAllData();
                         ?>
                      
                     </select>

@@ -1,23 +1,10 @@
-<?php include "db.php"; 
+<?php include "db.php";?>
+<?php include "function.php";?>
+<?php
 if(isset($_POST['submit'])){
-    $Username = $_POST['Username'];
-    $Password = $_POST['Password']; 
-    
-    echo "we are connected";
-
-    $query = "INSERT INTO users(username,password)";
-    $query .= "VALUES ('$Username', '$Password')";
-
-
-   $result = mysqli_query($connection, $query);  
-
-   if(!$result){
-    die('Query Failed' . mysqli_error($myqli));
-   }
+    UpdateTable();
 }
-  
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +18,7 @@ if(isset($_POST['submit'])){
 
     <div class="container">
         <div class="col-sm-6">
-            <form action="login_create.php" method="POST">
+            <form action="login_delete.php" method="POST">
                 <div class="form-control">
                     <label for="Username">Username</label>
                     <input type="text" name="Username"  class="form-control">
@@ -40,7 +27,15 @@ if(isset($_POST['submit'])){
                     <label for="Password">Password</label>
                     <input type="Password" name="Password" class="form-control">
                 </div>
-                <input class="btn btn-primary" type="submit" name="submit">
+                <div class="form-control">
+                    <select name="id" id="id">
+                        <?php
+                           showAllData();
+                        ?>
+                     
+                    </select>
+                </div>
+                <input class="btn btn-primary" type="submit" name="submit" value="UPDATE">
             </form> 
         </div>    
     </div>    
