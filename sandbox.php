@@ -35,3 +35,22 @@
 
 </body>
 </html>
+
+
+if(isset($_POST['submit'])){
+	global $connection;
+	$Username = $_POST['Username'];
+	$Password = $_POST['Password']; 
+	
+	echo "we are connected";
+
+	$query = "INSERT INTO users(username,password) ";
+	$query .= "VALUES ('$Username', '$Password')";
+
+
+   $result = mysqli_query($connection, $query);  
+
+	if(!$result){
+		die('Query Failed' . mysqli_error($myqli));
+	}
+}
