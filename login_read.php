@@ -9,13 +9,13 @@
     }
 
 
-    $query = "INSERT INTO users(username,password)";
-    $query .= "VALUES ('$Username', '$Password')";
+    $query = "SELECT * FROM users";
+    
 
     $result = mysqli_query($connection, $query);
 
     if(!$result){
-    die('Query Failed'. mysqli_error());
+    die('Query Failed'. mysqli_error($connection));
     }
     
 
@@ -32,9 +32,27 @@
 <body>
     <div class="container">
         <div class="col-sm-6">
+            <?php 
             
+             while($row = mysqli_fetch_assoc($result)) {
+                  
+                ?>  
+                
+                <pre>
 
+                <?php 
+                print_r($row);
+                ?>
 
+                </pre>
+
+                <?php 
+
+             }
+            
+            
+            
+            ?>
         </div>    
     </div>    
 </body>
