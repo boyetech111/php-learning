@@ -1,8 +1,6 @@
-<?php include "db.php";?> 
-<?php include "function.php" ?>
-
+<?php include "db.php";?>
+<?php include "function.php"?>
 <?php createRows();?>
-
 <?php include "includes/header.php"?>
 
     <div class="container">

@@ -1,7 +1,7 @@
 <?php include "db.php";?>
 <?php include "function.php";?>
 <?php UpdateTable();?>
-<?php include "includes/header.php" ?>
+<?php include "includes/header.php"?>
 
     <div class="container">
         <div class="col-sm-6">
@@ -27,4 +27,4 @@
             </form> 
         </div>    
     </div>    
-<?php include "includes/footer.php" ?>
+<?php include "includes/footer.php"?>
