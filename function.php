@@ -6,6 +6,10 @@ function createRows(){
         global $connection;
         $Username = $_POST['Username'];
         $Password = $_POST['Password']; 
+
+        $Username = mysqli_real_escape_string($connection, $Username);
+        $Password = mysqli_real_escape_string($connection, $Password);
+
     
         $query = "INSERT INTO users(username,password) ";
         $query .= "VALUES ('$Username', '$Password')";
