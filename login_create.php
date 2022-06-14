@@ -9,11 +9,11 @@
             <form action="login_create.php" method="POST">
                 <div class="form-control">
                     <label for="Username">Username</label>
-                    <input type="text" name="Username"  class="form-control">
+                    <input type="text" name="Username" placeholder="Password"  class="form-control">
                 </div>
                 <div class="form-control">
                     <label for="Password">Password</label>
-                    <input type="Password" name="Password" class="form-control">
+                    <input type="Password" name="Password" placeholder="Password" class="form-control">
                 </div>
                 <input class="btn btn-primary" type="submit" name="submit" value="CREATE">
             </form> 
