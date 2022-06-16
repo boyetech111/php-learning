@@ -4,11 +4,7 @@
  $name = "everyday";
  $value = 100;
  $expiration = time() + (60*60*24*7);
-
-
-
-
-setcookie('','','');
+ setcookie($name,$value,$expiration);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +15,15 @@ setcookie('','','');
     <title>Document</title>
 </head>
 <body>
+    <?php 
+       if(isset($_COOKIE["everyday"])){
+       $someOne = $_COOKIE["everyday"];
+       echo $someOne;
+       } else {
+        $someOne ="";
+       }
     
+    
+    ?>
 </body>
 </html>
